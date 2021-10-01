@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+article{
+    width: 60%;
+    border: grey solid 2px;
+}
+section{
+    width: 60%;
+    border: grey solid 2px;
+}
