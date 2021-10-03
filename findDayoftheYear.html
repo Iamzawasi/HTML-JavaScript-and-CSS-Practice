@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day of the Year Finder</title>
+    <style>
+      body{
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: column;
+      }
+      input{
+          margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Find day of the year</h1>
+    <p>Please choose a Date to find day of the year.</p>
+    <input type="date" id="dateSelector" />
+    <input
+      type="button"
+      id="DateFinderButton"
+      value="Press to find day"
+      onclick="dayfinder()"
+    />
+    <script>
+      function dayfinder() {
+        if (document.getElementById("dateSelector").value == "") {
+          alert("Please select an accorate date before pressing the button");
+        } else {
+          let d = new Date(document.getElementById("dateSelector").value);
+          //let d = new Date("12, 31, 2019");
+          let dayoftheyear = d.getDate();
+          let month = d.getMonth() + 1;
+          let year = d.getFullYear();
+          let i = 2;
+          let str = "";
+          if (month == 0) {
+            month = 12;
+          }
+          while (i <= month) {
+            str = year.toString() + ", " + i.toString() + ",0"; //exp : 2/0/2012  mm/dd/2012 it will retrive minus 1 in month and get the days
+            let dat = new Date(str);
+            dayoftheyear += dat.getDate();
+            i++;
+          }
+          alert(d + " is the " + dayoftheyear + " day of the year");
+        }
+      }
+    </script>
+  </body>
+</html>
