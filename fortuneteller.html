@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fortune Teller</title>
+  </head>
+  <body>
+    <h1>Fortune teller</h1>
+    <p>
+      Warning: the Result of your fortune can be catastrophic, if you press the
+      button you agree with offensive statement of the program
+    </p>
+    <input
+      type="button"
+      value="Discover your fortune"
+      onclick="fortunediscoverer()"
+    />
+    <script>
+      function fortunediscoverer() {
+        let partnerName = [
+          "Ahmad",
+          "John",
+          "Amin",
+          "Adnan",
+          "David",
+          "Miller",
+          "Butler",
+          "Christiano",
+          "Faisal",
+          "Chuan Li",
+        ];
+        let numberOfChildren = [1, 4, 3, 0, 5, 3, 10, 5, 2, 4];
+        let locations = [
+          "Paris",
+          "Zurich",
+          "Zug",
+          "Heaven",
+          "Hell",
+          "New York",
+          "Ontario",
+          "Basel",
+          "California",
+          "Olten",
+        ];
+        let jobs = [
+          "Programmer",
+          "Driver",
+          "Instructor",
+          "Broker",
+          "Film Star",
+          "Criminal",
+          "UnderCover Police",
+          "Commando",
+          "Cook",
+          "Writter",
+        ];
+        let NameAndLocation = Math.floor(Math.random() * 10);
+        let ChildrenAndJobTitle = Math.floor(Math.random() * 10);
+        let Yourfortune = ` You will be Married to ${partnerName[NameAndLocation]} with ${numberOfChildren[ChildrenAndJobTitle]} Kid(s) and you will be working at ${locations[NameAndLocation]} as a ${jobs[ChildrenAndJobTitle]}`;
+        alert(Yourfortune);
+      }
+    </script>
+  </body>
+</html>
