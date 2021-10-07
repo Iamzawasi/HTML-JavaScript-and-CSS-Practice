@@ -1,0 +1,11 @@
+Pseudo-Code Age Retirement-calculator.
+CurrentAge=as Date(prompt("Enter your age in mm/yyyyy Format ));
+Retirementage=as Date(prompt("Enter the Year you wish to retire in mm/yyyy formate"));
+validate the CurrentAge
+Validate the RetirementYear
+if date is not valide repeat the step 2 or 3;
+IF both dates are in correct format then RetirementYear-RetirementYear
+Print: You are  systemdate-CurrentAge years
+Print: you will retire at RetirementYear
+Print: you have Retirementage-(systemdate-CurrentAge)  year left until you can retire
+Print: its systemdate(year) so you can retire in systemdate+(Retirementage-(systemdate-CurrentAge)).

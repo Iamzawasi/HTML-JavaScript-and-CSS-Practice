@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label{
+        display: inline-block;
+        color: blue;
+        width: 6rem;
+      }
+      body{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color: rgb(211, 210, 207);
+
+
+      }
+      input[type="button"]{
+        width: 5.1rem;
+        margin: auto;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      In mathematics, the greatest common divisor (GCD) of two or more integers,
+      which are not all zero, is the largest positive integer that divides each
+      of the integers.
+    </p>
+
+    <label for="firstNo">Enter No 1</label>
+    <input
+      type="text"
+      id="firstNo"
+      onkeypress="return validateTxtBox(event)"
+      required
+    />
+
+    <label for="SecNo">Enter No 2</label>
+    <input
+      type="text"
+      id="SecNo"
+      onkeypress="return validateTxtBox(event)"
+      required
+    />
+
+    <label for="GCD">The GCD is</label>
+    <input type="text" id="GCD" disabled />
+    <div>
+      <input type="button" value="Find GCD" onclick="GCDCal()" />
+      <input type="button" value="Reset" onclick="reset()" />
+    </div>
+
+    <script>
+      function validateTxtBox(evt) {
+        let ASCICode = evt.which ? evt.which : event.keyCode;
+        if (ASCICode >= 48 && ASCICode <= 57) {
+          return true;
+        }
+        return false;
+      }
+      function reset() {
+        document.getElementById("firstNo").value = "";
+        document.getElementById("SecNo").value = "";
+        document.getElementById("GCD").value = "";
+      }
+
+      function GCDCal() {
+        if (
+          document.getElementById("firstNo").value == "" ||
+          document.getElementById("SecNo").value == ""
+        ) {
+          alert("Please Enter valid Number in both Textboxes");
+        } else {
+          let firstNo = Number(document.getElementById("firstNo").value);
+          let SecNo = Number(document.getElementById("SecNo").value);
+          let Reminder;
+          while (Reminder != 0) {
+            Reminder = firstNo % SecNo;
+            firstNo = SecNo;
+            SecNo = Reminder;
+          }
+          document.getElementById("GCD").value = firstNo;
+        }
+      }
+
+      //=========================Underneath function is for prompt and alert
+      // let no = [0, 0];
+      // function validateNumber() {
+      //   let i = 0;
+      //   while (i != 2) {
+      //     no[i] = Number(prompt(`Enter no${i + 1} for GCD`));
+      //     if (no[i] < 0 || isNaN(no[i])) {
+      //     } else {
+      //       i += 1;
+      //     }
+      //   }
+      // }
+      // function GCDcalc() {
+      //   validateNumber();
+      //   let Reminder;
+      //   while (Reminder != 0) {
+      //     Reminder = no[0] % no[1];
+      //     no[0] = no[1]; // its the first number.
+      //     no[1] = Reminder; // its the second number
+      //   }
+      //   alert(`The GCD is ${no[0]}`);
+      // }
+      // //GCDcalc();
+    </script>
+  </body>
+</html>

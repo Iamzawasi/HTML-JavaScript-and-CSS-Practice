@@ -1,0 +1,19 @@
+Retirement calculator
+Create a program that determines how many years you have left until 
+retirement and the year you can retire. It should prompt for your 
+current age and the age you want to retire and display the output as shown in 
+the example that follows on the next slide
+===================================slide info=================================
+What is your age? 25
+At what age would you like to retire? 65
+You have 40 years left until you can retire.
+It's 2020, so you can retire in 2060
+===============================================
+input1: Enter your age.
+input2: When would you like to retire (year)
+Constraints1: First we should change the the prompt value into Date.
+Constraints: We have to consider the months too. because if someone is born in 
+December 2000 it means he should be 20 year old not 21 in the year 2021.
+we have to validate the date. Weather a currect date is provided or not.
+
+
